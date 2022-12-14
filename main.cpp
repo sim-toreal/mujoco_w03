@@ -99,6 +99,36 @@ void scroll(GLFWwindow* window, double xoffset, double yoffset) {
 }
 
 
+void pendulumController(const mjModel* m, mjData* d) {
+  // the first actuator is torque so this is setting PD control
+  // 1) this is using qpos[0] i.e. the ground truth for position data
+  // d->ctrl[0] = -10 * (d->qpos[0] - 0) - 1 * d->qvel[0];
+
+  // 2) this is using sensor readings with noise (sensor[0] is position sensor and sensor[1] is velocity sensor)
+  // d->ctrl[0] = -10 * (d->sensordata[0] - 0) - 1 * d->sensordata[1];
+
+  // second actuator is the position servo - THIS REQUIRES setting some Kp in the pendulum.xml OR using m->actuator_gainprm[10] and m->actuator_biasprm[11]
+  // strangely, position servo works like a spring - setting this will make the pendulum jump around that position
+//  m->actuator_gainprm[10] = 100;
+//  m->actuator_biasprm[11] = -100;
+//  d->ctrl[1] = 0.5;
+
+  // third is the velocity servo
+  // so this value is angular velocity - if we set Kv high enough to fight gravity, it should just spin at that velocity
+  // m->actuator_gainprm[20] = 100;
+  // m->actuator_biasprm[22] = -100;
+  // d->ctrl[2] = 10;
+
+  // You can combine the position and velocity actuators through PD control to achieve something like the standard positional servo
+  m->actuator_gainprm[10] = 10;
+  m->actuator_biasprm[11] = -10;
+  m->actuator_gainprm[20] = 1;
+  m->actuator_biasprm[22] = -1;
+  d->ctrl[1] = 0.5;
+  d->ctrl[2] = 0;
+
+}
+
 // main function
 int main(int argc, const char** argv) {
   // check command-line arguments
@@ -146,6 +176,16 @@ int main(int argc, const char** argv) {
   glfwSetCursorPosCallback(window, mouse_move);
   glfwSetMouseButtonCallback(window, mouse_button);
   glfwSetScrollCallback(window, scroll);
+
+  cam.azimuth = 90;
+  cam.elevation = -20;
+  cam.distance = 5;
+  cam.lookat[2] = 1;
+
+  d->qpos[0] = 1.57;
+
+  mjcb_control = pendulumController;
+
 
   // run main loop, target real-time simulation and 60 fps rendering
   while (!glfwWindowShouldClose(window)) {

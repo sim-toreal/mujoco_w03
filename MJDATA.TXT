@@ -1,0 +1,211 @@
+SIZES
+  nstack                1703936
+  nbuffer               4256
+  pstack                1
+  maxuse_stack          24
+  maxuse_con            0
+  maxuse_efc            0
+  solver_iter           0
+  solver_nnz            0
+  ne                    0
+  nf                    0
+  nefc                  0
+  ncon                  0
+
+TIMER
+    0:  duration =  0.47       number = 15
+    1:  duration =  0.45       number = 15
+    2:  duration =  0          number = 0
+    3:  duration =  0.27       number = 15
+    4:  duration =  0.056      number = 15
+    5:  duration =  0.025      number = 15
+    6:  duration =  0.013      number = 15
+    7:  duration =  0          number = 0
+    8:  duration =  0.076      number = 15
+    9:  duration =  0.023      number = 15
+    10:  duration =  0.088      number = 15
+    11:  duration =  0.063      number = 15
+    12:  duration =  0.006      number = 15
+
+ENERGY =  0         0        
+
+TIME =  15      
+
+QPOS
+   7.2      
+  
+QVEL
+   1        
+  
+QACC_WARMSTART
+   0.03     
+  
+CTRL
+   0        
+   0        
+   1        
+  
+QFRC_APPLIED
+   0        
+  
+XFRC_APPLIED
+   0         0         0         0         0         0        
+   0         0         0         0         0         0        
+  
+QACC
+   0.03     
+  
+SENSOR
+   7.3      
+   1.1      
+  
+XPOS
+   0         0         0        
+   0.4       0         1.8      
+  
+XQUAT
+   1         0         0         0        
+   0.45      0        -0.89      0        
+  
+XMAT
+   1         0         0         0         1         0         0         0         1        
+  -0.59     -0        -0.81      0         1        -0         0.81      0        -0.59     
+  
+XIPOS
+   0         0         0        
+   0.4       0         1.8      
+  
+XIMAT
+   1         0         0         0         1         0         0         0         1        
+  -0.59     -0        -0.81      0         1        -0         0.81      0        -0.59     
+  
+XANCHOR
+   6.1e-17   0         1.5      
+  
+XAXIS
+   0         1         0        
+  
+GEOM_XPOS
+   0         0         0        
+   0.4       0         1.8      
+  
+GEOM_XMAT
+   1         0         0         0         1         0         0         0         1        
+  -0.59     -0        -0.81      0         1        -0         0.81      0        -0.59     
+  
+LIGHT_XPOS
+   0         0         1        
+   0        -0.2       1        
+  
+LIGHT_XDIR
+   0         0        -1        
+   0         0.24     -0.97     
+  
+SUBTREE_COM
+   0.4       0         1.8      
+   0.4       0         1.8      
+  
+CDOF
+   0         1         0         0.3       0        -0.4      
+  
+CINERT
+   0         0         0         0         0         0         0         0         0         0        
+   0.03      0.084     0.055     0        -0.039     0         0         0         0         1        
+  
+ACTUATOR_LENGTH
+   7.2      
+   7.2      
+   7.2      
+  
+ACTUATOR_MOMENT
+   1        
+   1        
+   1        
+  
+CRB
+   0         0         0         0         0         0         0         0         0         0        
+   0.03      0.084     0.055     0        -0.039     0         0         0         0         1        
+  
+QM
+   0.33     
+  
+QLD
+   0.33     
+  
+QLDIAGINV
+   3        
+  
+QLDIAGSQRTINV
+   1.7      
+  
+D_rownnz             0 
+
+D_rowadr             0 
+
+D_colind             0 
+
+QDERIV
+   0        
+  
+QLU
+   0        
+  
+CONTACT
+ACTUATOR_VELOCITY
+   1        
+   1        
+   1        
+  
+CVEL
+   0         0         0         0         0         0        
+   0         1         0         0.31      0        -0.42     
+  
+CDOF_DOT
+   0         0         0         0         0         0        
+  
+QFRC_BIAS
+  -4        
+  
+QFRC_PASSIVE
+   0        
+  
+SUBTREE_LINVEL
+   0         0         0        
+   0         0         0        
+  
+SUBTREE_ANGMOM
+   0         0         0        
+   0         0         0        
+  
+ACTUATOR_FORCE
+   0        
+   0        
+  -3.9      
+  
+QFRC_ACTUATOR
+  -3.9      
+  
+QFRC_SMOOTH
+   0.01     
+  
+QACC_SMOOTH
+   0.03     
+  
+QFRC_CONSTRAINT
+   0        
+  
+QFRC_INVERSE
+   0        
+  
+CACC
+   0         0         0         0         0         0        
+   0         0         0         0         0         0        
+  
+CFRC_INT
+   0         0         0         0         0         0        
+   0         0         0         0         0         0        
+  
+CFRC_EXT
+   0         0         0         0         0         0        
+   0         0         0         0         0         0        
+  
