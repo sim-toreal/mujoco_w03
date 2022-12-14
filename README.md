@@ -5,6 +5,21 @@ Again, rather than using the provided template, I used the `basic.cc` from the M
 
 This section is about setting up actuators and sensors and then accessing them through the code.
 
+
+### Building
+This is a standard CMake project and I normally run it from CLion.
+
+[CMakeLists.txt](CMakeLists.txt) has hard-coded path to MuJoCo - you will need to update it first to your path.
+
+To manually build & run:
+
+    mkdir build
+    cd build
+    cmake ..
+    build -j4
+
+    ./w03
+
 #### Simulator Print Model and Print Data
 The simulator (under `mujoco-xxx/bin/simulate`) has a very useful function that allows to print the 
 details of the model ([MJMODEL.TXT](MJMODEL.TXT)) and well as data ([MJDATA.TXT](MJDATA.TXT)).
