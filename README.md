@@ -97,3 +97,18 @@ In the code, they can be accessed through `d->sensordata[...]`, again each index
 They can be accessed in the controller to calculate the actuation values, e.g.:
 
     d->ctrl[0] = -10 * (d->sensordata[0] - 0) - 1 * d->sensordata[1];
+
+#### Sensor Noise
+There is a [built-in support for sensor noise](https://mujoco.readthedocs.io/en/latest/modeling.html#csensor) - I have not really tested it, so I don't know how good it really is.
+To use it needs to be enabled in the XML file (at the top):
+
+    <option>
+		<flag sensornoise="enable" />
+	</option>
+
+And then at the sensor level:
+
+    <sensor>
+		<jointpos name="position_sensor" joint="pendulum_mount" noise="0.2" />
+		<jointvel name="velocity_sensor" joint="pendulum_mount" noise="0.2" />
+	</sensor>
